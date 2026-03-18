@@ -18,7 +18,8 @@ llm = ChatOllama(
 wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
 tools = [wikipedia]
 
-system_prompt = "Du är en hjälpsam agent som kan svara på alla frågor som finns på wikipedia"
+system_prompt = """Du är en hjälpsam agent som kan svara på alla frågor som finns på wikipedia"
+du har till gång till verktyget {tools}"""
 
 prompt = PromptTemplate.from_template(system_prompt)
 
